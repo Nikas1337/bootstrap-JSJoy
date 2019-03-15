@@ -45,6 +45,7 @@
         }
         h1, h2 {
             margin-bottom: 50px;
+            font-weight: bolder;
         }
         h1 {
             font-size: 4rem;
@@ -334,7 +335,7 @@
         <h4>&copy;2019</h4>
     </footer>
     <script>
-        var touchsurface = document.querySelector('body'),
+        var touchsurface = document.querySelector('#list-tab'),
             startX,
             startY,
             dist,
@@ -411,11 +412,11 @@
             startX = touchobj.pageX;
             startY = touchobj.pageY;
             startTime = new Date().getTime() // время контакта с поверхностью сенсора
-            e.preventDefault()
+
         }, false);
 
         touchsurface.addEventListener('touchmove', function(e){
-            e.preventDefault() // отключаем стандартную реакцию скроллинга
+             // отключаем стандартную реакцию скроллинга
         }, false);
 
         touchsurface.addEventListener('touchend', function(e){
@@ -430,7 +431,7 @@
             } else if (swipeleftBol) {
                 handleswipe(1)
             }
-            e.preventDefault()
+
 
         }, true)
 
