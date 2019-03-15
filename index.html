@@ -41,6 +41,12 @@
         main, .about, .contact {
             padding: 25px;
         }
+        .gallery {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         #list-tab {
             background: transparent;
             padding: 0;
@@ -77,6 +83,19 @@
             overflow: hidden;
             height: 80vh;
         }
+        /*.carousel-control-prev-icon,*/
+        /*.carousel-control-next-icon {*/
+            /*position: relative;*/
+            /*bottom: 10%;*/
+        /*}*/
+        .carousel-control-prev,
+        .carousel-control-next {
+            transition: .5s;
+        }
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0,0,0,0.15);
+        }
         footer {
             width: 100%;
             min-height: 10vh;
@@ -87,17 +106,29 @@
 
             justify-content: center;
         }
-        .col-sm-11 {
+        .col-sm-10 {
             padding: 0;
         }
         header > div {
             height: 100%;
         }
-        @media (max-width: 576px) {
+
+        @media (max-width: 1025px) {
+            .list-group-item.list-group-item-action {
+                font-size: 1.5rem;
+            }
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                position: relative;
+                bottom: 0;
+            }
+        }
+        @media (max-width: 573px) {
             body {
-                overflow: auto;
+
                 height: auto;
             }
+
             #list-tab {
                 flex-direction: row;
                 height: auto;
@@ -120,10 +151,10 @@
 <body>
     <div class="container-fluid">
         <header class="row align-items-center">
-            <div class="col-3 col-sm-1">
+            <div class="col-3 col-sm-2">
                 <img src="https://img.icons8.com/nolan/96/000000/cheburashka.png" alt="Hmm, cheburator here">
             </div>
-            <div class="col-9 col-sm-11">
+            <div class="col-9 col-sm-10">
                 <h3>Company &caret;</h3>
             </div>
         </header>
@@ -131,7 +162,7 @@
 
     <div class="container-fluid">
         <div class="row page-content">
-            <div class="col-sm-1 aside-like">
+            <div class="col-sm-2 aside-like">
                 <div class="list-group" id="list-tab" role="tablist">
                     <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
                     <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">About</a>
@@ -139,7 +170,7 @@
                     <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Contact us</a>
                 </div>
             </div>
-            <div class="col-sm-11">
+            <div class="col-sm-10">
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                         <main>
@@ -187,6 +218,7 @@
                     <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
                         <div class="contact">
                             <h2>Contact Us now</h2>
+                            <br><br>
                             <h3><a href="tel:1488">Our phone: +18124235123</a></h3>
                             <h3><a href="#">Our address: US, West Virginia, Country Road, 228b</a></h3>
                         </div>
