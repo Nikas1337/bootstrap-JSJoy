@@ -1,10 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap try</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <style>
+        body {
+            background: #464646;
+            color: #dedede;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            text-align: center;
+        }
+        header {
+            background: #262626;
+            color: #fff;
+            min-height: 10vh;
+            text-align: center;
+            margin-left: 25px;
+        }
+        header img, header h3 {
+            margin: 0;
+        }
+        .aside-like {
+            padding: 0;
+        }
+        .page-content {
+            min-height: 80vh;
+        }
+        
+        #list-tab {
+            background: transparent;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #list-tab a {
+            background: #868686;
+        }
+        .list-group {
+            height: 100%;
+        }
+        .list-group-item.list-group-item-action {
+            border-radius: 0;
+            padding: 50px 0;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .list-group-item.list-group-item-action.active {
+            border: 2px solid #fff;
+        }
+        footer {
+            width: 100%;
+            min-height: 10vh;
+            background: #262626;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+        }
+        header > div {
+            height: 100%;
+        }
+        @media (max-width: 576px) {
+            body {
+                overflow: auto;
+                height: auto;
+            }
+            #list-tab {
+                flex-direction: row;
+                height: auto;
+
+            }
+            .list-group-item.list-group-item-action {
+                flex-direction: row;
+                padding: 0;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container-fluid">
+        <header class="row align-items-center">
+            <div class="col-3 col-sm-1">
+                <img src="https://img.icons8.com/nolan/96/000000/cheburashka.png" alt="Hmm, cheburator here">
+            </div>
+            <div class="col-9 col-sm-11">
+                <h3>Cool company selling cool things</h3>
+            </div>
+        </header>
+    </div>
 
+    <div class="container-fluid">
+        <div class="row page-content">
+            <div class="col-sm-1 aside-like">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+                </div>
+            </div>
+            <div class="col-sm-11">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                        <main>
+                            <h1>My Page with new brainexploding design</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolorem doloremque, eligendi illo itaque, magni, minus nam sapiente tempora tempore temporibus totam voluptatum. Enim error harum porro praesentium vero voluptatibus.</p>
+                        </main>
+                    </div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">.asf.</div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...wrqwrq</div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">..qwsafasw.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="col-12">
+        <h4>&copy;2019</h4>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
