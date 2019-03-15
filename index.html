@@ -16,6 +16,7 @@
             justify-content: space-between;
             min-height: 100vh;
             overflow: hidden;
+            font-size: 18px;
         }
         ul {
             list-style: none;
@@ -25,25 +26,67 @@
         header {
             background: #262626;
             color: #fff;
-            min-height: 10vh;
+            min-height: 7vh;
             text-align: center;
             margin-left: 25px;
         }
         header img, header h3 {
             margin: 0;
-            font-size: 5rem;
+            font-size: 5.5rem;
+            display: block;
         }
         .logo-here {
             background: #323232;
+            padding: 15px;
+            margin: 0;
+        }
+        .logo-here img {
+            margin: auto;
+        }
+        h1, h2 {
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 4rem;
+        }
+        h2 {
+            font-size: 4rem;
+        }
+        .max-height {
+            max-height: 78vh;
         }
         .aside-like {
             padding: 0;
         }
         .page-content {
-            min-height: 80vh;
+            min-height: 70vh;
         }
         main, .about, .contact {
             padding: 25px;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        .about h2 {
+            text-align: center;
+        }
+        .team-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 80%;
+            margin: auto;
+
+        }
+        .team-gallery .card {
+            width: 21%;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 20px;
+        }
+        .team-gallery .card .card-body {
+            background: #262626;
+            color: #d6d6d6;
+            text-align: center;
         }
         .gallery {
             height: 100%;
@@ -107,8 +150,9 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-
-            justify-content: center;
+            z-index: 1000;
+            padding-top: 20px;
+            justify-content: flex-start;
         }
         .col-sm-10 {
             padding: 0;
@@ -116,7 +160,11 @@
         header > div {
             height: 100%;
         }
-
+        @media (max-width: 1367px) {
+            footer {
+                padding-top: 5px;
+            }
+        }
         @media (max-width: 1025px) {
             .list-group-item.list-group-item-action {
                 font-size: 1.5rem;
@@ -126,13 +174,27 @@
                 position: relative;
                 bottom: 0;
             }
+            .team-gallery .card {
+                width: 48%;
+            }
         }
         @media (max-width: 573px) {
             body {
 
                 height: auto;
             }
-
+            .logo-here {
+                padding: 0;
+            }
+            header h3 {
+                font-size: 2rem;
+            }
+            .max-height {
+                min-height: 80vh;
+            }
+            h1 {
+                font-size: 2rem;
+            }
             #list-tab {
                 flex-direction: row;
                 height: auto;
@@ -154,7 +216,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <header class="row align-items-start">
+        <header class="row align-items-center">
             <div class="col-3 col-sm-2 logo-here">
                 <img src="https://img.icons8.com/nolan/96/000000/cheburashka.png" alt="Hmm, cheburator here">
             </div>
@@ -164,12 +226,12 @@
         </header>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid max-height">
         <div class="row page-content">
             <div class="col-sm-2 aside-like">
                 <div class="list-group" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">About</a>
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">About Us</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Our Team</a>
                     <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Gallery</a>
                     <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Contact us</a>
                 </div>
@@ -184,8 +246,33 @@
                     </div>
                     <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                         <div class="about">
-                            <h2>About Us</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem, delectus dolorem eligendi enim illum iusto magnam magni minima natus nobis omnis pariatur provident quidem recusandae rerum tempora temporibus veniam?</p>
+                            <h2>Our team</h2>
+                            <div class="team-gallery">
+                                <div class="card">
+                                    <img src="img/cat%20(2).jpg" class="card-img-top" alt="xxx">
+                                    <div class="card-body">
+                                        <p class="card-text">Cat</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="img/cat%20(2).jpg" class="card-img-top" alt="xxx">
+                                    <div class="card-body">
+                                        <p class="card-text">Cat</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="img/cat%20(2).jpg" class="card-img-top" alt="xxx">
+                                    <div class="card-body">
+                                        <p class="card-text">Cat</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="img/cat%20(2).jpg" class="card-img-top" alt="xxx">
+                                    <div class="card-body">
+                                        <p class="card-text">Cat</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
