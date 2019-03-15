@@ -205,7 +205,7 @@
             }
             .list-group-item.list-group-item-action {
                 flex-direction: row;
-                padding: 0;
+                padding: 10px 0;
                 font-size: 1.2rem;
             }
             .tab-pane {
@@ -229,7 +229,7 @@
                 <img src="https://img.icons8.com/nolan/96/000000/cheburashka.png" alt="Hmm, cheburator here">
             </div>
             <div class="col-9 col-sm-10">
-                <h3>Company &caret;</h3>
+                <h3>Company &rationals;</h3>
             </div>
         </header>
     </div>
@@ -333,7 +333,76 @@
     <footer class="col-12">
         <h4>&copy;2019</h4>
     </footer>
+    <script>
+        var touchsurface = document.querySelector('body'),
+            startX,
+            startY,
+            dist,
+            threshold = 150, // минимальное расстояние для swipe
+            allowedTime = 200, // максимальное время прохождения установленного расстояния
+            elapsedTime,
+            startTime;
+        var counter = -1;
+        var children = document.querySelector('#list-tab').children;
+        var content= document.querySelector('#nav-tabContent').children;
+        function handleswipe(isrightswipe){
+            if (isrightswipe){
+                counter++;
+                if (counter >= 3) {
+                    counter=-1;
+                    children[3].classList.remove('active');
+                    content[3].classList.remove('active');
+                    content[3].classList.remove('show');
+                    children[0].classList.add('active');
+                    content[0].classList.add('show');
+                    content[0].classList.add('active');
 
+                }
+
+
+                children[counter+1].classList.add('active');
+                content[counter+1].classList.add('show');
+                content[counter+1].classList.add('active');
+
+                children[counter].classList.remove('active');
+                content[counter].classList.remove('show');
+                content[counter].classList.remove('active');
+
+
+
+
+            }
+
+            else {
+            }
+        }
+
+        touchsurface.addEventListener('touchstart', function(e){
+            var touchobj = e.changedTouches[0];
+            dist = 0;
+            startX = touchobj.pageX;
+            startY = touchobj.pageY;
+            startTime = new Date().getTime() // время контакта с поверхностью сенсора
+
+        }, false);
+
+        touchsurface.addEventListener('touchmove', function(e){
+            e.preventDefault() // отключаем стандартную реакцию скроллинга
+        }, false);
+
+        touchsurface.addEventListener('touchend', function(e){
+            var touchobj = e.changedTouches[0];
+            dist = touchobj.pageX - startX; // получаем пройденную дистанцию
+            elapsedTime = new Date().getTime() - startTime;// узнаем пройденное время
+            // проверяем затраченное время,горизонтальное перемещение >= threshold, и вертикальное перемещение <= 100
+            var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100);
+            var swipeleftBol = (elapsedTime <= allowedTime && dist <= threshold && Math.abs(touchobj.pageY - startY) <= 100);
+            handleswipe(swiperightBol||swipeleftBol);
+
+        }, true)
+
+
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
