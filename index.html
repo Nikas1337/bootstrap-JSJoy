@@ -206,7 +206,7 @@
             .list-group-item.list-group-item-action {
                 flex-direction: row;
                 padding: 10px 0;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             .tab-pane {
                 height: auto;
@@ -349,7 +349,6 @@
             if (isrightswipe == 1){
 
                 counter++;
-                alert(1 + " " + counter)
                 if (counter >= 3) {
                     counter=-1;
                     children[3].classList.remove('active');
@@ -378,7 +377,6 @@
             else if (isrightswipe == 2) {
                 counter--;
 
-                alert(2+" "+counter)
                 if (counter <= -2) {
                     counter=2;
                     children[0].classList.remove('active');
