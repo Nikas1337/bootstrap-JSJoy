@@ -411,7 +411,7 @@
             startX = touchobj.pageX;
             startY = touchobj.pageY;
             startTime = new Date().getTime() // время контакта с поверхностью сенсора
-
+            e.preventDefault()
         }, false);
 
         touchsurface.addEventListener('touchmove', function(e){
@@ -430,7 +430,7 @@
             } else if (swipeleftBol) {
                 handleswipe(1)
             }
-
+            e.preventDefault()
 
         }, true)
 
